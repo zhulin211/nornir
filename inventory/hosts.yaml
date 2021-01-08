@@ -1,0 +1,17 @@
+csr1:
+    groups:
+        - iosxe_routers
+    hostname: 192.168.1.1
+    data:
+        site: beijing
+        role: host
+        type: router
+
+csr2:
+#    groups:
+#        - iosxe_routers
+    hostname: 192.168.1.2
+    data:
+        site: shanghai
+        role: host
+        type: router

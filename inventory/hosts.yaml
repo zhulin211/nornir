@@ -6,6 +6,27 @@ csr1:
         site: beijing
         role: host
         type: router
+        router_id: 1.1.1.1
+        ospf_process_id: 1
+        interface_list:
+            -   interface_name: Loopback0
+                ipaddr: 1.1.1.1
+                netmask: 255.255.255.255
+            -   interface_name: GigabitEthernet1
+                ipaddr: 137.78.5.254
+                netmask: 255.255.255.0
+            -   interface_name: GigabitEthernet2
+                ipaddr: 61.128.1.254
+                netmask: 255.255.255.0
+        ospf_network_list:
+            -   network: 137.78.5.0
+                wildmask: 0.0.0.255
+                area: 0
+            -   network: 61.128.1.0
+                wildmask: 0.0.0.255
+                area: 0
+
+
 
 csr2:
 #    groups:
@@ -15,3 +36,22 @@ csr2:
         site: shanghai
         role: host
         type: router
+        router_id: 2.2.2.2
+        ospf_process_id: 1
+        interface_list:
+            -   interface_name: Loopback0
+                ipaddr: 2.2.2.2
+                netmask: 255.255.255.255
+            -   interface_name: GigabitEthernet1
+                ipaddr: 61.128.1.1
+                netmask: 255.255.255.0
+            -   interface_name: GigabitEthernet2
+                ipaddr: 202.100.1.1
+                netmask: 255.255.255.0
+        ospf_network_list:
+            -   network: 61.128.1.0
+                wildmask: 0.0.0.255
+                area: 0
+            -   network: 202.100.1.0
+                wildmask: 0.0.0.255
+                area: 0

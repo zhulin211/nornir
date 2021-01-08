@@ -1,3 +1,4 @@
+# https://nornir.readthedocs.io/en/latest/tutorial/inventory.html
 from nornir import InitNornir
 from nornir.core.inventory import Host
 from pprint import pprint

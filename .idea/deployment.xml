@@ -5,7 +5,7 @@
       <paths name="root@192.168.1.100:22">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/pycharm_project_546" local="$PROJECT_DIR$" />
+            <mapping deploy="/nornir" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>

@@ -3,7 +3,7 @@ from nornir_netmiko.tasks import netmiko_send_command, netmiko_send_config
 from nornir_jinja2.plugins.tasks import template_file
 from nornir_utils.plugins.functions import print_result
 
-
+# 加载配置文件config.yaml
 nr = InitNornir(
     config_file="config.yaml",
     # dry_run=True
@@ -23,12 +23,12 @@ asas = nr.filter(
 
 
 # 执行show命令
-result = routers.run(netmiko_send_command, command_string="show ip int br")
-print_result(result)
+netmiko_show_result = routers.run(netmiko_send_command, command_string="show ip int br")
+print_result(netmiko_show_result)
 
-for i in result:
+for i in netmiko_show_result:
     print('='*50 + i + '='*50)
-    print(result[i].result)
+    print(netmiko_show_result[i].result)
 
 
 # 配置路由器函数
@@ -58,10 +58,10 @@ def config_asas(task):
     task.run(netmiko_send_config, config_commands=asa_interface_template.result.split('\n'), cmd_verify=True)
 
 
-# # 执行配置路由器并打印结果
-# run_result = routers.run(config_routers)
-# print_result(run_result)
-#
-# # 执行配置防火墙并打印结果
-# run_result = asas.run(config_asas)
-# print_result(run_result)
+# 执行配置路由器并打印结果
+run_result = routers.run(config_routers)
+print_result(run_result)
+
+# 执行配置防火墙并打印结果
+run_result = asas.run(config_asas)
+print_result(run_result)

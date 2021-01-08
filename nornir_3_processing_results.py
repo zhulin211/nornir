@@ -72,5 +72,7 @@ from nornir_utils.plugins.functions import print_result
 
 # print_result(result, severity_level=logging.DEBUG)
 # print_result(result['csr1'][2])
+
+# 你可以提取什么设备'csr1',第几次任务的结果
 print(result['csr1'][2])
 print("changed: ", result["csr1"].changed)

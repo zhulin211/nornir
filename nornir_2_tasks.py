@@ -12,32 +12,40 @@ nr = nr.filter(
 )
 
 
-# # hello world
-# def hello_world(task: Task) -> Result:
-#     return Result(
-#         host=task.host,
-#         result=f"{task.host.name} says hello world!"
-#     )
-#
-#
-# result = nr.run(task=hello_world)
-# print_result(result)
+print('-'*50 + 'hello_world' + '-'*50)
 
 
-# # 添加参数
+# hello world
+def hello_world(task: Task) -> Result:
+    return Result(
+        host=task.host,
+        result=f"{task.host.name} says hello world!"
+    )
+
+
+result = nr.run(task=hello_world)
+print_result(result)
+
+print('-'*50 + '传参数' + '-'*50)
+
+
+# 添加参数
+# Task, str, Result都是在控制类型而已
 def say(task: Task, text: str) -> Result:
     return Result(
         host=task.host,
         result=f"{task.host.name} says {text}"
     )
-#
-#
-# result = nr.run(
-#     name="more parameters",
-#     task=say,
-#     text="welcome to qytang!"
-# )
-# print_result(result)
+
+
+result = nr.run(
+    name="more parameters",
+    task=say,
+    text="welcome to qytang!"
+)
+print_result(result)
+
+print('-'*50 + '一组任务' + '-'*50)
 
 
 # Grouping Tasks

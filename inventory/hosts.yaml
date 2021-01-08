@@ -54,7 +54,7 @@ csr2:
                 wildmask: 0.0.0.255
                 area: 0
 
-casa:
+asa1:
     groups:
         - asas
     hostname: 192.168.1.3

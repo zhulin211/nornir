@@ -2,3 +2,9 @@ iosxe_routers:
     platform: cisco_ios
     username: admin
     password: Cisc0123
+
+asas:
+    platform: cisco_asa
+    username: admin
+    password: Cisc0123
+    secret: Cisc0123

@@ -38,6 +38,7 @@ csr1 = nr.inventory.hosts['csr1']
 print(type(csr1))
 print(csr1.keys())
 print(csr1['site'])
+print(csr1['interface_list'])
 
 # csr2从default获取data
 print('-'*50 + '打印csr2信息(从default得到信息)' + '-'*50)

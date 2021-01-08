@@ -27,6 +27,8 @@ netmiko_show_result = routers.run(netmiko_send_command, command_string="show ip 
 print_result(netmiko_show_result)
 
 for i in netmiko_show_result:
+    print(i)
+    print(type(i))
     print('='*50 + i + '='*50)
     print(netmiko_show_result[i].result)
 
